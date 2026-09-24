@@ -1,287 +1,56 @@
 <!doctype html>
-<html lang="en-AU">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Metrica | Making paper-based assessment easier to manage</title>
-  <meta name="description" content="Metrica is working with educators to reduce the friction of paper-based assessment, from handling and digitising student work to reviewing and marking it.">
-  <meta name="theme-color" content="#faf7f2">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Metrica">
-  <meta property="og:description" content="Making paper-based assessment easier to manage.">
-  <meta property="og:locale" content="en_AU">
-  <meta name="twitter:card" content="summary">
-
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f3a5f'/%3E%3Ctext x='16' y='22.5' font-family='Georgia,serif' font-size='18' font-weight='500' fill='%23faf7f2' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;display=swap">
-
-  <style>
-    :root {
-      /* Surfaces */
-      --color-surface: #faf7f2;
-      --color-rule: #e6dfd4;
-
-      /* Ink */
-      --color-ink-strong: #1c2433;
-      --color-ink: #3d3a36;
-      --color-ink-muted: #6f685f;
-
-      /* Brand */
-      --color-brand: #1f3a5f;
-      --color-accent: #b0521b;
-      --color-status: #5f8552;
-
-      /* Type */
-      --font-serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-      --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-
-      /* Layout */
-      --page-max: 72rem;
-      --gutter: clamp(1.25rem, 4vw, 3rem);
-      --radius: 6px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html { -webkit-text-size-adjust: 100%; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      background: var(--color-surface);
-      color: var(--color-ink);
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a { color: inherit; }
-
-    :focus-visible {
-      outline: 2px solid var(--color-brand);
-      outline-offset: 3px;
-      border-radius: 2px;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: var(--gutter);
-      top: -3rem;
-      padding: 0.5rem 0.75rem;
-      background: var(--color-ink-strong);
-      color: var(--color-surface);
-      border-radius: var(--radius);
-      text-decoration: none;
-    }
-    .skip-link:focus { top: 1rem; }
-
-    .container {
-      width: 100%;
-      max-width: var(--page-max);
-      margin-inline: auto;
-      padding-inline: var(--gutter);
-    }
-
-    /* Header */
-    .site-header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding-block: 1.75rem;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.625rem;
-      text-decoration: none;
-    }
-
-    .brand__mark {
-      display: grid;
-      place-items: center;
-      width: 2rem;
-      height: 2rem;
-      border-radius: var(--radius);
-      background: var(--color-brand);
-      color: var(--color-surface);
-      font: 500 1.0625rem/1 var(--font-serif);
-    }
-
-    .brand__name {
-      font: 500 1.25rem/1 var(--font-serif);
-      color: var(--color-ink-strong);
-    }
-
-    .contact-link {
-      font-size: 0.875rem;
-      color: var(--color-ink-muted);
-      text-decoration: none;
-      text-underline-offset: 3px;
-    }
-    .contact-link:hover { color: var(--color-ink-strong); text-decoration: underline; }
-
-    /* Hero */
-    main { flex: 1; display: flex; align-items: center; }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-      gap: clamp(2rem, 6vw, 5rem);
-      align-items: end;
-      padding-block: clamp(3rem, 10vh, 7rem);
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin: 0 0 1.5rem;
-      font-size: 0.8125rem;
-      letter-spacing: 0.06em;
-      color: var(--color-accent);
-    }
-    .eyebrow::before {
-      content: "";
-      width: 1.5rem;
-      height: 1px;
-      background: currentColor;
-    }
-
-    .hero__title {
-      margin: 0 0 1.5rem;
-      max-width: 16ch;
-      font-family: var(--font-serif);
-      font-weight: 500;
-      font-size: clamp(2.375rem, 5.5vw, 4rem);
-      line-height: 1.08;
-      letter-spacing: -0.015em;
-      color: var(--color-ink-strong);
-      font-variation-settings: "opsz" 60;
-    }
-
-    .hero__lede {
-      margin: 0 0 1.75rem;
-      max-width: 34rem;
-      font-size: clamp(1rem, 1.6vw, 1.125rem);
-      line-height: 1.7;
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0;
-      font-size: 0.875rem;
-    }
-    .status::before {
-      content: "";
-      width: 0.4375rem;
-      height: 0.4375rem;
-      border-radius: 50%;
-      background: var(--color-status);
-    }
-
-    .aside {
-      margin: 0;
-      padding-left: 1.5rem;
-      border-left: 1px solid var(--color-rule);
-    }
-
-    .aside__quote {
-      margin: 0 0 0.875rem;
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: clamp(1.125rem, 2vw, 1.3125rem);
-      line-height: 1.5;
-      color: var(--color-ink-strong);
-    }
-
-    .aside__quote p { margin: 0; }
-
-    .aside__caption {
-      margin: 0;
-      font-size: 0.8125rem;
-      color: var(--color-ink-muted);
-    }
-
-    /* Footer */
-    .site-footer .container {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      padding-block: 1.25rem 1.75rem;
-      border-top: 1px solid var(--color-rule);
-      font-size: 0.8125rem;
-      color: var(--color-ink-muted);
-    }
-    .site-footer p { margin: 0; }
-
-    @media (max-width: 48rem) {
-      .hero { grid-template-columns: minmax(0, 1fr); align-items: start; }
-      .contact-link { font-size: 0.8125rem; }
-    }
-
-    @media (max-width: 26rem) {
-      .site-header .container { flex-wrap: wrap; }
-    }
-
-  </style>
+  <title>Metrica — Thoughtfully rethinking assessment.</title>
+  <meta name="description" content="We’re working with educators to rethink paper-based assessments, so teachers can focus on what matters most: teaching.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="animation.js" defer></script>
+  <script src="waitlist.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="/" aria-label="Metrica home">
-        <span class="brand__mark" aria-hidden="true">M</span>
-        <span class="brand__name">Metrica</span>
-      </a>
-      <a class="contact-link" href="mailto:hello@withmetrica.com">hello@withmetrica.com</a>
-    </div>
-  </header>
-
-  <main id="main">
-    <div class="container hero">
-      <div>
-        <p class="eyebrow">Now in development</p>
-        <h1 class="hero__title">Making paper-based assessment easier to manage.</h1>
-        <p class="hero__lede">
-          We're working with educators to understand where paper-based assessment
-          creates the most friction, from handling and digitising student work to
-          reviewing and marking it.
-        </p>
-        <p class="status">Building the first version</p>
+  <main class="page">
+    <header class="header">
+      <div class="wordmark"><img src="assets/metrica-logo.png" alt="Metrica" width="2976" height="1195" fetchpriority="high"></div>
+      <span class="contact">hello@withmetrica</span>
+    </header>
+    <section class="hero" aria-labelledby="metrica-heading">
+      <div class="copyPane">
+        <canvas id="pane-refraction" class="paneRefraction" aria-hidden="true"></canvas>
+        <h1 id="metrica-heading">Thoughtfully rethinking assessment.</h1>
+        <div class="heroDetails">
+          <p class="subtitle">We’re working with educators to understand the friction in paper-based assessments. From digitising student work, to delivering useful feedback, we’re rethinking the entire workflow — so teachers can focus on what matters most: teaching.</p>
+          <div class="signup">
+            <form id="waitlist-form" class="form" aria-label="Get Metrica updates">
+              <canvas id="glass-refraction" class="glassRefraction" aria-hidden="true"></canvas>
+              <label class="srOnly" for="waitlist-email">Your email address</label>
+              <input id="waitlist-email" class="email" name="email" type="email" autocomplete="email" placeholder="Your email address" required maxlength="254" aria-describedby="signup-note">
+              <button class="submit" type="submit"><span id="submit-label">Join the waitlist</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            </form>
+            <p id="signup-note" class="formNote" role="status" aria-live="polite"></p>
+            <noscript><p class="formNote">JavaScript is needed to submit this form.</p></noscript>
+          </div>
+        </div>
       </div>
-
-      <figure class="aside">
-        <blockquote class="aside__quote">
-          <p>From the stack on the staffroom desk to marks back in students' hands.</p>
-        </blockquote>
-        <figcaption class="aside__caption">Talking to teachers across Australia</figcaption>
-      </figure>
-    </div>
+      <div class="graphicSpace">
+        <figure class="figure">
+          <div id="scene-frame" class="frame">
+            <picture>
+              <source media="(max-width: 700px)" srcset="assets/teaching-dots-mobile.svg">
+              <img id="scene-still" class="still" src="assets/teaching-dots.svg" alt="" aria-hidden="true" width="960" height="600">
+            </picture>
+            <canvas id="scene-canvas" class="canvas" aria-hidden="true"></canvas>
+          </div>
+          <figcaption class="srOnly">Three gently moving teaching scenes illustrated in blue dots: individual feedback, classroom support and practical learning.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <footer class="footer">
+      <span class="copyright">© <span id="copyright-year">2026</span> Metrica</span>
+      <div class="affiliation"><span>Part of the residency at</span><img src="assets/antler.svg" alt="Antler" width="75" height="19"></div>
+    </footer>
   </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>Melbourne, Australia</p>
-      <p>&copy; <span id="year">2026</span> Metrica</p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = String(new Date().getFullYear());
-  </script>
 </body>
 </html>
